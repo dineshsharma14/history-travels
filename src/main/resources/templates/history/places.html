@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<article>
+<figure class="places">
+    <img th:src="@{images/bull-temple-tanjore.jpg}"
+         class="img-fluid"/>
+    <figcaption>Temple in Tanjore</figcaption>
+</figure>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </p>
+    <input type="submit" name="explore" value="explore" />
+    <input type="submit" name="add" value="Add to trail"/>
+</article>
+</body>
+</html>

@@ -1,9 +1,17 @@
 package org.launchcode.historytravels.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue
+    private int id;
 
     @NotNull
     @Size(min = 3, max = 15)
@@ -17,19 +25,24 @@ public class User {
     @Size(min = 5, max = 100)
     private String password;
 
-    private int userId;
-    private static int nextUserId = 1;
+    @NotNull
+    @Size(min = 5, max = 100,
+            message = "Verify password must be same as password")
+    private String verify;
 
-    public User (String userName, String email, String password) {
-        this();
+    public User (String userName, String email, String password,
+                 String verify) {
         this.userName = userName;
         this.email = email;
         this.password = password;
+        this.verify = verify;
     }
 
     public User(){
-        userId = nextUserId;
-        nextUserId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getUserName() {
@@ -56,11 +69,11 @@ public class User {
         this.password = password;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getVerify() {
+        return verify;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setVerify(String verify) {
+        this.verify = verify;
     }
 }

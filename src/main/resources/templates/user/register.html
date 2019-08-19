@@ -21,13 +21,14 @@
     </div>
     <div class="form-group">
         <label th:for="password">Password</label>
-        <input class="form-control" type="password"
-               th:field="*{password}"/>
+        <input class="form-control" type="password" th:field="*{password}"/>
+        <span th:errors="*{password}" class="error"></span>
     </div>
     <div class="form-group">
-        <label for="password-field1">Verify Password</label>
-        <input class="form-control" id="password-field1" type="password"
-               name="verify"/>
+        <label th:for="verify">Verify Password</label>
+        <input class="form-control" type="password" th:field="*{verify}"/>
+        <span th:errors="*{verify}" class="error"></span>
+        <p th:text="${passwordError}"></p>
     </div>
     <input type="submit" value="Submit"/>
 </form>

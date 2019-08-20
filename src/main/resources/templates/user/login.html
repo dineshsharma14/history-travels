@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<p>Enter Username and Password!</p>
+
+<form method="post" style="max-width:600px;" th:object="${loginUser}">
+    <div class="form-group">
+        <label th:for="userName">Name</label>
+        <input class="form-control" th:field="*{name}" type="text"/>
+        <!-- this will see the userName field of passed in Object -->
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="password">Password</label>
+        <input class="form-control" type="password" th:field="*{password}"/>
+        <span th:errors="*{password}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Login"/>
+</form>
+<br/>
+<div class="alert alert-primary" role="alert">
+Didn't have account<a href="/user/register" class="alert-link"> Sign-up</a> today!!
+</div>
+</body>
+</html>

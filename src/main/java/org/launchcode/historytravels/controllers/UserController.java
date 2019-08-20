@@ -1,5 +1,6 @@
 package org.launchcode.historytravels.controllers;
 
+import org.launchcode.historytravels.models.LoginUser;
 import org.launchcode.historytravels.models.User;
 import org.launchcode.historytravels.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,18 +41,32 @@ public class UserController {
                                            @ModelAttribute @Valid User user,
                                            Errors errors) {
 
-        if (errors.hasErrors() || !user.getPassword().equals(user.getVerify())){
+        Iterable<User> allUsers = userDao.findAll();
+
+        if (errors.hasErrors()){
             model.addAttribute("title",
                     "User Registration");
-
-            if(!user.getPassword().equals(user.getVerify())){
-                model.addAttribute("passwordError",
-                        "Passwords don't match!");
-            }
             return "user/register";
+
         }
+
+        for(User existingUser : allUsers){
+            if(existingUser.getUserName().equals(user.getUserName())){
+                model.addAttribute("userError",
+                        "Username already exists!");
+                return "user/register";
+            }
+        }
+
+        if(!user.getPassword().equals(user.getVerify())){
+            model.addAttribute("passwordError",
+                    "Passwords don't match!");
+            return "user/register";
+
+        }
+
         userDao.save(user);
-        model.addAttribute("user", user.getUserName());
+        model.addAttribute("user",user);
         return "user/index";
 
     }
@@ -60,6 +75,40 @@ public class UserController {
     public String addToTrail (Model model){
         model.addAttribute("title","Add to trail");
         return "user/trail";
+    }
+
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String loginDisplay (Model model,
+                                @ModelAttribute LoginUser loginUser){
+        model.addAttribute("title", "Login");
+        return "user/login";
+    }
+
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public String loginProcess (Model model,
+                                @ModelAttribute @Valid LoginUser loginUser,
+                                Errors errors){
+        model.addAttribute("title", "Login");
+
+        String name = loginUser.getName();
+        Iterable<User> allUsers = userDao.findAll();
+        User theUser = null;
+
+        for(User user : allUsers){
+            if(user.getUserName().equals(name)){
+                theUser = user;
+            }
+        }
+
+        if(theUser == null){
+            return "user/login";
+        }
+
+        else {
+            model.addAttribute("user",theUser);
+            return "user/index";
+        }
+
     }
 
 

@@ -90,12 +90,22 @@ public class UserController {
                                 Errors errors){
         model.addAttribute("title", "Login");
 
+        if (errors.hasErrors()){
+            model.addAttribute("title",
+                    "Login");
+            return "user/login";
+
+        }
+
         String name = loginUser.getName();
+        String password = loginUser.getPassword();
         Iterable<User> allUsers = userDao.findAll();
+
         User theUser = null;
 
         for(User user : allUsers){
-            if(user.getUserName().equals(name)){
+            if(user.getUserName().equals(name) &&
+                    user.getPassword().equals(password)){
                 theUser = user;
             }
         }

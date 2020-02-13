@@ -7,7 +7,13 @@
 
 <body class="container">
 
-<h3 class="display" th:text="'Hello ' + ${user.userName}"></h3>
+<h3 class="display" th:text="Hello"></h3>
+
+<form th:action="@{/logout}" method="POST">
+
+    <input type="submit" value="Logout" class="btn btn-outline-primary mt-2" />
+
+</form>
 
 </body>
 

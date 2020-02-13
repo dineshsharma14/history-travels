@@ -1,6 +1,5 @@
 package org.launchcode.historytravels.controllers;
 
-import org.launchcode.historytravels.models.LoginUser;
 import org.launchcode.historytravels.models.User;
 import org.launchcode.historytravels.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = "index")
     public String index (Model model) {
         // Model class's model object is used to pass data to view.
 
@@ -78,47 +77,15 @@ public class UserController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public String loginDisplay (Model model,
-                                @ModelAttribute LoginUser loginUser){
-        model.addAttribute("title", "Login");
+    public String loginDisplay (Model model){
+        model.addAttribute("title", "User Login");
         return "user/login";
     }
 
-    @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String loginProcess (Model model,
-                                @ModelAttribute @Valid LoginUser loginUser,
-                                Errors errors){
-        model.addAttribute("title", "Login");
-
-        if (errors.hasErrors()){
-            model.addAttribute("title",
-                    "Login");
-            return "user/login";
-
-        }
-
-        String name = loginUser.getName();
-        String password = loginUser.getPassword();
-        Iterable<User> allUsers = userDao.findAll();
-
-        User theUser = null;
-
-        for(User user : allUsers){
-            if(user.getUserName().equals(name) &&
-                    user.getPassword().equals(password)){
-                theUser = user;
-            }
-        }
-
-        if(theUser == null){
-            return "user/login";
-        }
-
-        else {
-            model.addAttribute("user",theUser);
-            return "user/index";
-        }
-
+    @RequestMapping(value = "employees", method = RequestMethod.GET)
+    public String employeesOnly (Model model){
+        model.addAttribute("title", "Employee Home Page");
+        return "user/employeeIndex";
     }
 
 

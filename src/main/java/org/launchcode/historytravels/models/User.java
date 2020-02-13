@@ -15,11 +15,7 @@ public class User {
 
     @NotNull
     @Size(min = 3, max = 15)
-    private String userName;
-
-    @NotNull
-    @Size(min = 10, max = 50)
-    private String email;
+    private String username;
 
     @NotNull
     @Size(min = 5, max = 100)
@@ -30,10 +26,9 @@ public class User {
             message = "Verify password must be same as password")
     private String verify;
 
-    public User (String userName, String email, String password,
+    public User (String username, String password,
                  String verify) {
-        this.userName = userName;
-        this.email = email;
+        this.username = username;
         this.password = password;
         this.verify = verify;
     }
@@ -46,19 +41,11 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this.username = userName;
     }
 
     public String getPassword() {

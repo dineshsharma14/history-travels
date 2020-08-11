@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+
+<div th:replace="fragments :: cart"></div>
+
+<h3 class="display-3">Chola History Trail</h3>
+
+<p class="lead">
+    The Cholas were not just one of the longest ruling dynasties in the Indian
+    history, they were also more of a phenomenon; fore-fathers of so many
+    innovations - in water management for a predominantly agrarian society, in
+    levying relevant taxes and composing intelligent social laws for an
+    expanding wealthy population.
+</p>
+
+<p>
+    Travelling with us, you will experience the grandeur of Cholas, walk
+    through their battlefields which led to their meteoric rise, stroll
+    across the ruins which mourn their unpropitious fall, the drama and
+    intrigue behind their strategic alliances and their final resting places.
+    If you are someone willing to understand and see the golden past, we are
+    waiting.
+</p>
+
+<div class="container trailPlaces">
+
+    <div class="card places float-left">
+        <figure class="figure">
+            <img th:src="@{~/images/brihadisvaraTemple.jpg}" class="img-fluid"/>
+            <figcaption>Brihadisvara Temple</figcaption>
+        </figure>
+
+        <p class="briefWriteup">
+            A Hindu temple dedicated to Lord Shiva located in south bank of Kaveri river in
+            Thanjavur, TN, India. Built by Raja Raja Chola I between 1003 and 1010 AD, the
+            temple is a part of UNESCO World Heritage Site and exemplary example of a fully
+            realized Dravidian architecture.
+        </p>
+        <span class="buttons">
+        <button onclick="document.location='history-trail/brihadisvara-temple'" class="btn btn-primary">
+            Explore</button>
+        <span class="addToCart" >
+            <button type="submit" class="btn btn-primary">Add to trail</button>
+        </span>
+        </span>
+    </div>
+
+    <div class="card places float-left">
+        <figure class="figure">
+            <img th:src="@{~/images/rajarajaStatue.jpg}" class="img-fluid"/>
+            <figcaption>Rajaraja Chola Museum</figcaption>
+        </figure>
+        <p class="briefWriteup">
+        This museum was built by the State of Tamil Nadu in 1984 to celebrate the
+        1000th birth anniversary of the great Chola king Raja Raja Chola. King Raja Raja
+        Chola was the most famous King in the Chola dynasty that ruled Thanjavur.
+        </p>
+        <span class="buttons">
+        <button onclick="document.location='history-trail/rajaraja-chola-museum'" class="btn btn-primary">
+            Explore</button>
+        <span class="addToCart" >
+            <button type="submit" class="btn btn-primary">Add to trail</button>
+        </span>
+        </span>
+    </div>
+    <div class="card places float-left">
+    <figure class="figure">
+        <img th:src="@{~/images/srirangamTemple.jpg}" class="img-fluid"/>
+        <figcaption>Srirangam Temple</figcaption>
+    </figure>
+    <p class="briefWriteup">
+        The Sri Ranganathaswamy Temple is a Hindu temple dedicated to Ranganatha, a
+        reclining form of the Lord Vishnu. Constructed in the Dravidian architectural
+        style, the temple is glorified by Alvars in Divya Prabhanda and has unique
+        distinction of being not only the foremost among 108 Divya Desams dedicated
+        to Vishnu, but also the largest functioning Hindu temple in the world.
+    </p>
+    <span class="buttons">
+        <button onclick="document.location='history-trail/srirangam-temple'" class="btn btn-primary">
+            Explore</button>
+    <span class="addToCart">
+        <button type="submit" class="btn btn-primary">Add to trail</button>
+    </span>
+    </span>
+    </div>
+</div>
+
+</body>
+</html>

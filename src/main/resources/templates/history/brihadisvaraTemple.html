@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<article>
+    <figure class="places">
+        <img th:src="@{~/images/brihadisvaraTemple.jpg}"
+             class="img-fluid"/>
+        <figcaption>Brihadisvara Temple</figcaption>
+    </figure>
+    <p class="writeup">
+        A Hindu temple dedicated to Lord Shiva located in south bank of Kaveri river in
+        Thanjavur, TN, India. Built by Raja Raja Chola I between 1003 and 1010 AD, the
+        temple is a part of UNESCO World Heritage Site and exemplary example of a fully
+        realized Dravidian architecture.
+    </p>
+    <p>
+        It is also famed for the quality of its sculpture, as well as being the
+        location that commissioned the brass Nataraja - Shiva. The complex includes shrines
+        of other deities part of Shaivism, Vaishnavism and Shaktism traditions of Hinduism.
+    </p>
+</article>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<article>
+    <figure class="places">
+        <img th:src="@{~/images/rajarajaStatue.jpg}"
+             class="img-fluid"/>
+        <figcaption>Rajaraja Chola I Museum</figcaption>
+    </figure>
+    <p class="writeup">
+        This museum was built by the State of Tamil Nadu in 1984 to celebrate the
+        1000th birth anniversary of the great Chola king Raja Raja Chola. King Raja Raja
+        Chola was the most famous King in the Chola dynasty that ruled Thanjavur.
+    </p>
+    <p>
+        He was respected and loved for his promotion of art and culture, royal endeavours,
+        efficient administration and feared for a myriad of military conquests. It was
+        King Raja Raja Chola who raised the status of the Chola dynasty to the unexpected
+        heights and founded the way on which the dynasty flourished, grew and spread across
+        the South of India for two long centuries.
+    </p>
+</article>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head"></head>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<article>
+    <figure class="places">
+        <img th:src="@{~/images/srirangamTemple.jpg}"
+             class="img-fluid"/>
+        <figcaption>Sri Ranganathaswamy Temple</figcaption>
+    </figure>
+    <p class="writeup">
+        The Sri Ranganathaswamy Temple is a Hindu temple dedicated to Ranganatha, a
+        reclining form of the Lord Vishnu. Constructed in the Dravidian architectural
+        style, the temple is glorified by Alvars in Divya Prabhanda and has unique
+        distinction of being not only the foremost among 108 Divya Desams dedicated
+        to Vishnu, but also the largest functioning Hindu temple in the world.
+    </p>
+
+    <p>
+      The inscriptions in the temple belong to Chola, Pandya, Hoysala and Vijaynagar
+        dynasties who ruled over the region. The temple is mentioned in Tamil literature
+        of Sangam era (6th Century BC to 4th Century AD).
+    </p>
+</article>
+</body>
+</html>

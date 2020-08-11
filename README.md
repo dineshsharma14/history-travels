@@ -1,11 +1,13 @@
 # history-travels
 
-History Travels is a web application for a travel agency which is offering its users a immersive and hassle free experience of Indian 
-history.
+History Travels is a web application for a travel agency which is offering an immersive and hassle free experience of world heritage sites from the state of Tamil Nadu, India.
 
-Home page shows what our website is for, invites user to explore the places and further we have the functionality of signing up and login.
-To add the places one want to visit and build a trail, add preferences viz. type of hotel, food, car for local transportation and finally place a order on company.
+Home page invites user to explore the guided trail(s) available. User can add the places he/she want to visit and build a trail (aka Shopping cart functionality), add preferences via checkout form and finally place an order.
 
-I am developing this web application using Java SpringBoot, MySQL database (users), Bootstrap, Thymeleaf templating engine, HTML and CSS.
+Backend:
+Java, Spring, Spring Boot, Spring Security MySQL database (for users and orders - OneToMany Relationship)
 
-Building it has given me good exposure of the Java programming laguage, MVC system of development of applications using SpringBoot.
+Frontend:
+Thymeleaf templating engine, Bootstrap, JavaScript.
+
+Building it has given me good exposure of the Java, Spring Framework, Spring Boot MVC, Spring Security, Frontend aspects viz. component based UI, JavaScript, Shopping cart functionality, Browser Local storage etc.
